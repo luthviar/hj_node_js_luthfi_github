@@ -1,0 +1,48 @@
+development
+Site is running at port :  \\.\pipe\a6bb5427-6cdf-49f3-8ddd-096f770c35e6
+Executing (default): SELECT 1+1 AS result
+Executing (default): CREATE TABLE IF NOT EXISTS `countries` (`id` INTEGER NOT NULL auto_increment , `CountryCode` VARCHAR(2), `CountryName` VARCHAR(100), `createdAt` DATETIME, `updatedAt` DATETIME, PRIMARY KEY (`id`)) ENGINE=InnoDB;
+Connection successful
+Executing (default): SHOW INDEX FROM `countries` FROM `HJ`
+Executing (default): CREATE TABLE IF NOT EXISTS `cities` (`CityId` INTEGER(11) , `CityName` VARCHAR(50), `StateCode` VARCHAR(10), `CountryCode` VARCHAR(2), `createdAt` DATETIME, `updatedAt` DATETIME, PRIMARY KEY (`CityId`)) ENGINE=InnoDB;
+Executing (default): SHOW INDEX FROM `cities` FROM `HJ`
+Executing (default): CREATE TABLE IF NOT EXISTS `hotels` (`HotelId` INTEGER(11) , `CityId` INTEGER(11), `HotelName` VARCHAR(255), `StarRating` INTEGER(11), `Latitude` DOUBLE PRECISION, `Longitude` DOUBLE PRECISION, `Address` VARCHAR(255), `Location` VARCHAR(255), `PhoneNumber` DOUBLE PRECISION, `createdAt` DATETIME, `updatedAt` DATETIME, PRIMARY KEY (`HotelId`), FOREIGN KEY (`CityId`) REFERENCES `cities` (`CityId`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;
+Executing (default): SHOW INDEX FROM `hotels` FROM `HJ`
+Executing (default): CREATE TABLE IF NOT EXISTS `facilities` (`id` INTEGER NOT NULL auto_increment , `HotelId` INTEGER(11), `FacilityType` VARCHAR(50), `FacilityName` VARCHAR(200), `createdAt` DATETIME, `updatedAt` DATETIME, PRIMARY KEY (`id`), FOREIGN KEY (`HotelId`) REFERENCES `hotels` (`HotelId`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;
+Executing (default): SHOW INDEX FROM `facilities` FROM `HJ`
+Executing (default): CREATE TABLE IF NOT EXISTS `descriptions` (`id` INTEGER NOT NULL auto_increment , `HotelId` INTEGER(11), `Description` LONGTEXT, `createdAt` DATETIME, `updatedAt` DATETIME, PRIMARY KEY (`id`), FOREIGN KEY (`HotelId`) REFERENCES `hotels` (`HotelId`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;
+Executing (default): SHOW INDEX FROM `descriptions` FROM `HJ`
+Executing (default): CREATE TABLE IF NOT EXISTS `images` (`id` INTEGER NOT NULL auto_increment , `HotelId` INTEGER(11), `Image` VARCHAR(200), `createdAt` DATETIME, `updatedAt` DATETIME, PRIMARY KEY (`id`), FOREIGN KEY (`HotelId`) REFERENCES `hotels` (`HotelId`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;
+Executing (default): SHOW INDEX FROM `images` FROM `HJ`
+Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` INTEGER auto_increment , `firstname` VARCHAR(255), `lastname` VARCHAR(255), `username` TEXT, `about` TEXT, `email` VARCHAR(255), `password` VARCHAR(255) NOT NULL, `hash` VARCHAR(255) NOT NULL, `last_login` DATETIME, `status` ENUM('active', 'inactive') DEFAULT 'active', `createdAt` DATETIME, `updatedAt` DATETIME, PRIMARY KEY (`id`)) ENGINE=InnoDB;
+Business_1070186_2018-11-01_2018-11-02_3_RETAJ AL RAYYAN_DOHA_72_4.jpg
+Business_1074257_2018-11-01_2018-11-02_3_Marriott_MANILLA_125_4.jpg
+Business_2333799_2018-11-01_2018-11-02_3_City Seasons_DUBAI_267_4.jpg
+Business_3923752_2018-11-01_2018-11-02_3_Ramada Hotel Abu Dhabi _UAE_161_4.jpg
+Family_12503178_2018-11-01_2018-11-02_4_AL MEROZ _BANGKOK_76_4.jpg
+Family_1729487_2018-11-01_2018-11-02_3_PNB Perdana Hotel & Suites On The Park_KUALA LUMPUR_50_4.jpg
+Family_2705725_2018-11-01_2018-11-02_2_Rhadana Bali_BALI_29_4.jpg
+Luxury_3430929_2018-11-01_2018-11-02_4_Wyndham Grand Regency Doha_QATAR_57_4.jpg
+Luxury_3634931_2018-11-01_2018-11-02_4_Angels Marmaris_TURKEY_95_4.jpg
+Luxury_70231652_2018-11-01_2018-11-02_4_Adenya Hotel & Resort _TURKEY_71_4.jpg
+Rejuvination_1103412_2018-11-01_2018-11-02_3_Novotel Lombok Resort and Villas_LOMBOK_119_4.jpg
+Rejuvination_2033517_2018-11-01_2018-11-02_4_Al Areen Palace Spa Resort_BAHRAIN_369_4.jpg
+Rejuvination_8081993_2018-11-01_2018-11-02_4_Marjan Island Resort & Spa_UAE_229_4.jpg
+Rejuvination_9154470_2018-11-01_2018-11-02_2_Le Vizir Center Park & Resort _MOROCCO_105_4.jpg
+Romance_26471862_2018-11-01_2018-11-02_3_Jannah Place Dubai Marina_DUBAI_146_4.jpg
+Romance_3927289_2018-11-01_2018-11-02_3_Svarga Resort Lombok_LOMBOK_80_4.jpg
+Romance_4629779_2018-11-01_2018-11-02_3_costa-del-sol-Hotel_ANDALUSIA SPAIN_80_4.jpg
+Romance_4751988_2018-11-01_2018-11-02_5_Adya Hotel Langkawi_MALAYSIA_80_4.jpg
+Romance_7144719_2018-11-01_2018-11-02_5_Banana Island Resort Doha by Anantara_DOHA_371_4.jpg
+Executing (default): SHOW INDEX FROM `users` FROM `HJ`
+Executing (default): CREATE TABLE IF NOT EXISTS `transactions` (`TransactionId` INTEGER(11) NOT NULL , `HotelId` INTEGER(11), `BookingReference` VARCHAR(45), `YourReference` VARCHAR(45), `BookingStatus` VARCHAR(45), `PaymentToken` VARCHAR(45), `PaymentStatus` VARCHAR(45), `PaymentCustomerId` VARCHAR(45), `PaymentChargeId` VARCHAR(45), `PaymentCardId` VARCHAR(45), `BookingTime` VARCHAR(45), `Currency` VARCHAR(45), `AgentPrice` DECIMAL, `TotalPrice` DECIMAL, `HotelName` VARCHAR(45), `City` VARCHAR(45), `CheckInDate` DATETIME, `CheckOutDate` DATETIME, `LeaderName` VARCHAR(45), `UserId` VARCHAR(45), `Nationality` VARCHAR(45), `BoardType` VARCHAR(45), `CancellationDeadline` DATETIME, `createdAt` DATETIME, `updatedAt` DATETIME, PRIMARY KEY (`TransactionId`), FOREIGN KEY (`HotelId`) REFERENCES `hotels` (`HotelId`) ON DELETE SET NULL ON UPDATE CASCADE) ENGINE=InnoDB;
+Executing (default): SHOW INDEX FROM `transactions` FROM `HJ`
+Executing (default): CREATE TABLE IF NOT EXISTS `alerts` (`id` INTEGER(11) NOT NULL auto_increment , `TransactionId` INTEGER(11) NOT NULL, `Alert` TEXT, `createdAt` DATETIME, `updatedAt` DATETIME, PRIMARY KEY (`id`), FOREIGN KEY (`TransactionId`) REFERENCES `transactions` (`TransactionId`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;
+Executing (default): SHOW INDEX FROM `alerts` FROM `HJ`
+Executing (default): CREATE TABLE IF NOT EXISTS `policies` (`id` INTEGER(11) NOT NULL auto_increment , `TransactionId` INTEGER(11) NOT NULL, `From` VARCHAR(100), `Type` VARCHAR(100), `Value` VARCHAR(100), `createdAt` DATETIME, `updatedAt` DATETIME, PRIMARY KEY (`id`), FOREIGN KEY (`TransactionId`) REFERENCES `transactions` (`TransactionId`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;
+Executing (default): SHOW INDEX FROM `policies` FROM `HJ`
+Executing (default): CREATE TABLE IF NOT EXISTS `restrictions` (`id` INTEGER(11) NOT NULL auto_increment , `TransactionId` INTEGER(11) NOT NULL, `Restriction` VARCHAR(200), `createdAt` DATETIME, `updatedAt` DATETIME, PRIMARY KEY (`id`), FOREIGN KEY (`TransactionId`) REFERENCES `transactions` (`TransactionId`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;
+Executing (default): SHOW INDEX FROM `restrictions` FROM `HJ`
+Executing (default): CREATE TABLE IF NOT EXISTS `rooms` (`id` INTEGER(11) NOT NULL auto_increment , `TransactionId` INTEGER(11) NOT NULL, `RoomName` VARCHAR(100), `NumAdults` INTEGER(11), `NumChildren` INTEGER(11), `createdAt` DATETIME, `updatedAt` DATETIME, PRIMARY KEY (`id`), FOREIGN KEY (`TransactionId`) REFERENCES `transactions` (`TransactionId`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;
+Executing (default): SHOW INDEX FROM `rooms` FROM `HJ`
+Nice! Database looks fine

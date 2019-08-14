@@ -1,0 +1,38 @@
+{
+  "development": {
+    "username": "root",
+    "password": "Kaushal123",
+    "database": "HJ",
+    "host": "localhost",
+    "dialect": "mysql",
+	  "secret": "SecretJWTToken"
+  },
+  "development2": {
+    "username": "root",
+    "password": "Kaushal123",
+    "database": "HJTest",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "developmentRemote": {
+    "username": "Amir",
+    "password": "AmirScottAnderson)(^6385?",
+    "database": "HJ",
+    "host": "132.148.134.86",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "root",
+	  "database": "articles",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "root",
+	  "database": "articles",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

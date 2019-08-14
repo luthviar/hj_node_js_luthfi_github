@@ -1,0 +1,25 @@
+Application has thrown an uncaught exception and is terminated:
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:356:11)
+    at ServerResponse.header (C:\Projects\HJNode\node_modules\express\lib\response.js:730:10)
+    at ServerResponse.send (C:\Projects\HJNode\node_modules\express\lib\response.js:170:12)
+    at ServerResponse.json (C:\Projects\HJNode\node_modules\express\lib\response.js:256:15)
+    at C:\Projects\HJNode\server\controllers\api.js:128:27
+    at C:\Projects\HJNode\server\common\index.js:96:8
+    at Parser.<anonymous> (C:\Projects\HJNode\node_modules\xml2js\lib\xml2js.js:489:18)
+    at emitOne (events.js:96:13)
+    at Parser.emit (events.js:188:7)
+    at Object.onclosetag (C:\Projects\HJNode\node_modules\xml2js\lib\xml2js.js:447:26)
+    at emit (C:\Projects\HJNode\node_modules\sax\lib\sax.js:624:35)
+    at emitNode (C:\Projects\HJNode\node_modules\sax\lib\sax.js:629:5)
+    at closeTag (C:\Projects\HJNode\node_modules\sax\lib\sax.js:889:7)
+    at Object.write (C:\Projects\HJNode\node_modules\sax\lib\sax.js:1436:13)
+    at Parser.exports.Parser.Parser.parseString (C:\Projects\HJNode\node_modules\xml2js\lib\xml2js.js:508:31)
+    at Parser.parseString (C:\Projects\HJNode\node_modules\xml2js\lib\xml2js.js:7:59)
+    at exports.parseString (C:\Projects\HJNode\node_modules\xml2js\lib\xml2js.js:540:19)
+    at IncomingMessage.<anonymous> (C:\Projects\HJNode\server\common\index.js:89:6)
+    at emitNone (events.js:91:20)
+    at IncomingMessage.emit (events.js:185:7)
+    at endReadableNT (_stream_readable.js:974:12)
+    at _combinedTickCallback (internal/process/next_tick.js:80:11)
+    at process._tickCallback (internal/process/next_tick.js:104:9)

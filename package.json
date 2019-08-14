@@ -1,0 +1,30 @@
+{
+  "name": "node-mysql",
+  "version": "0.0.1",
+  "dependencies": {
+    "@ladjs/i18n": "^0.2.0",
+    "bcryptjs": "^2.1.0",
+    "body-parser": "^1.13.2",
+    "cors": "^2.8.1",
+    "dateformat": "^2.0.0",
+    "dotenv": "^4.0.0",
+    "email-templates": "^3.3.3",
+    "express": "^4.13.0",
+    "express-handlebars": "^3.0.0",
+    "express-jwt": "^3.0.1",
+    "express-session": "^1.15.5",
+    "jsonwebtoken": "^5.0.2",
+    "lodash": "^3.10.0",
+    "mongodb": "^2.1.16",
+    "mongoskin": "^2.1.0",
+    "mysql": "^2.14.1",
+    "mysql2": "^1.4.1",
+    "pug": "^2.0.0-rc.4",
+    "q": "^1.4.1",
+    "request": "^2.58.0",
+    "rootpath": "^0.1.2",
+    "sequelize": "^4.5.0",
+    "stripe": "^5.4.0",
+    "xml2js": "^0.4.17"
+  }
+}
