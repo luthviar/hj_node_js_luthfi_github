@@ -1,0 +1,7 @@
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/gotongr1/api.halaljourney.com"
+PassengerBaseURI "/"
+PassengerNodejs "/home/gotongr1/nodevenv/api.halaljourney.com/10/bin/node"
+PassengerAppType node
+PassengerStartupFile server.js
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
