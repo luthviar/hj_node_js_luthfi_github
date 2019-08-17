@@ -68,14 +68,14 @@ module.exports = {
 
 		if(requestType == 'HotelSearch') {
 			var options = {
-				host: hostHS,
+				host: hostDemo,
 				path: path,
 				method: method,
 				headers: headers
 			};
 		} else {
 			var options = {
-				host: hostOthers,
+				host: hostDemo,
 				path: path,
 				method: method,
 				headers: headers
