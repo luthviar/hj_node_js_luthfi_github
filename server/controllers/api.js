@@ -276,6 +276,7 @@ module.exports = {
     });
   },
   storePaymentToken(req, res) {
+    console.log('masuk storePaymentToken');
     console.log(req.body, req.body.UserId, req.body.PaymentToken);
     let transactionId;
     stripe.customers.create({
