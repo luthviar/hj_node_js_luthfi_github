@@ -6,6 +6,20 @@ var hotels = require('./server/controllers/hotels'),
     users = require('./server/services/user.service');
 var https = require('https');
 var http = require('http');
+const var_dump = require('var_dump')
+
+var variable = {
+  'data': {
+    'users': {
+      'id': 12,
+      'friends': [{
+        'id': 1,
+        'name': 'John Doe'
+      }]
+    }
+  }
+}
+
 portHTTP = process.env.HTTPPORT || 3000;
 portHTTPS = process.env.HTTPSPORT || 443;
 
@@ -52,6 +66,8 @@ models.sequelize.sync().then(function () {
 // ROUTES
 
 app.get('/', function (req, res) {
+  // print the variable using var_dump
+  var_dump('halo')
   res.send('Welcome to Node !');
 });
 app.use(cors());
