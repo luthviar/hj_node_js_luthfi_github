@@ -67,7 +67,8 @@ models.sequelize.sync().then(function () {
 
 app.get('/', function (req, res) {
   // print the variable using var_dump
-  var_dump('halo')
+  var_dump('halo');
+  console.log('welcome to node halaljourney');
   res.send('Welcome to Node Halaljourney !');
 });
 app.use(cors());
