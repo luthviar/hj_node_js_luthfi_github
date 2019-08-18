@@ -28,7 +28,7 @@ var expressJwt = require('express-jwt');
 var env = process.env.NODE_ENV || 'development';
 var config = require('config.json')[env];
 var cors = require('cors');
-
+app.use(cors());
 app.set("view engine", "pug");
 
 // For BodyParser
@@ -71,7 +71,7 @@ app.get('/', function (req, res) {
   console.log('welcome to node halaljourney');
   res.send('Welcome to Node Halaljourney !');
 });
-app.use(cors());
+
 
 // routes
 app.use('/api/users', require('./server/controllers/users.controller'));
