@@ -1,6 +1,6 @@
 require('dotenv').config();
 var http = require("http");
-var express = require("express");
+// var express = require("express");
 var qs = require("querystring");
 var parseString = require('xml2js').parseString;
 var dateFormat = require('dateformat');
@@ -18,8 +18,8 @@ const stripe = require("stripe")(keySecret);
 
 var sequelize = new Sequelize(config.database, config.username, config.password, config);
 
-var app = express(),
-  bodyParser = require('body-parser');
+// var app = express(),
+//   bodyParser = require('body-parser');
 
 var sendDataWhenReady = function (hotelDetailArray, hotelRoomsArray, res) {
   if (hotelDetailArray == null || hotelRoomsArray == null) {
