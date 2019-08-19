@@ -153,7 +153,8 @@ module.exports = {
     });
   },
   bookForOptionIdRoomId(req, res) {
-
+    res.header("Access-Control-Allow-Origin", "*");
+    console.log('masuk bookForOptionIdRoomId');
     var OptionId = req.params.optionid;
     var RoomId = req.params.roomid;
     console.log("PERSONAL DETAILS : ", req.body)
