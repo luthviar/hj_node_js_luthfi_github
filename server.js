@@ -78,6 +78,7 @@ app.use('/api/users', require('./server/controllers/users.controller'));
 app.use('/api/emails', require('./server/controllers/emails.controller'));
 
 app.get('/hotels/:countrycode/:city/:page', hotels.show); // From Db
+app.get('/hotels/:countrycode/:city/:star/:page', hotels.showStar); // From Db
 app.get('/api/:countrycode/:city/:page/:checkindate/:checkoutdate/:numofadults/:numofchildren', api.findHotelsByCityId); // From API
 app.get('/api/:countrycode/:city/:page/:checkindate/:checkoutdate/:numofadults/:numofchildren/:hotelid', api.findHotelByHotelId); // From API
 app.get('/api/HotelPolicy/:optionid', api.getPolicyForOptionId); // From API

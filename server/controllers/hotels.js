@@ -85,6 +85,55 @@ module.exports = {
 
   },
 
+  //Get an Hotels by the unique ID using model.findById() and star
+  showStar(req, res) {
+    res.header("Access-Control-Allow-Origin", "*");
+    // Get the City Id from Name
+    models.Cities.findAll({
+      where: {
+        CityName: req.params.city,
+        CountryCode: req.params.countrycode,        
+      },
+      attributes: ['CityId'],
+      limit: 1
+    }).then(City => {
+      let limit = parseInt(process.env.SEARCHLIMIT, 10) || 50;
+      let offset = 0;
+      models.Hotels.findAndCountAll({
+          where: {
+            CityId: City[0].CityId
+          }
+        })
+        .then((data) => { // findAndCountAll
+          let page = req.params.page; // Page Number from the route
+          let pages = Math.ceil(data.count / limit);
+          offset = limit * (page - 1);
+          console.log('TotalRows: ' + data.count + '  TotalPages: ' + pages + '  PageNo: ' + page + '  Offset: ' + offset);
+          models.Hotels.findAll({
+            include: ['facilities', 'images', 'descriptions'],
+            where: {
+              CityId: City[0].CityId,
+              StarRating: req.params.star
+            },
+            limit: limit || 50,
+            offset: offset || 0,
+            sort: {
+              StarRating: req.params.star
+            }
+          }).then(hotel => { // findAll
+            res.status(200).json(hotel);
+          }).catch(error => { // findAll
+            res.status(500).json(error);
+          });
+        }).catch(error => { // findAndCountAll
+          res.status(500).json(error);
+        });
+    }).catch(error => {
+      res.status(500).json(error);
+    });
+
+  },
+
   //Get All Cities
   getAllCities(req, res) {
     models.Cities.findAll({
