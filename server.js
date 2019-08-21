@@ -69,7 +69,7 @@ app.get('/', function (req, res) {
   // print the variable using var_dump
   var_dump('halo');
   console.log('welcome to node halaljourney');
-  res.send('Welcome to Node Halaljourney v3!');
+  res.send('Welcome to Node Halaljourney v4!');
 });
 
 
@@ -79,6 +79,7 @@ app.use('/api/emails', require('./server/controllers/emails.controller'));
 
 app.get('/hotels/:countrycode/:city/:page', hotels.show); // From Db
 app.get('/hotels/:countrycode/:city/:star/:page', hotels.showStar); // From Db
+app.get('/hotels/halal/:countrycode/:city/:star/:page', hotels.showStarHalal); // From Db
 app.get('/api/:countrycode/:city/:page/:checkindate/:checkoutdate/:numofadults/:numofchildren', api.findHotelsByCityId); // From API
 app.get('/api/:countrycode/:city/:page/:checkindate/:checkoutdate/:numofadults/:numofchildren/:hotelid', api.findHotelByHotelId); // From API
 app.get('/api/HotelPolicy/:optionid', api.getPolicyForOptionId); // From API

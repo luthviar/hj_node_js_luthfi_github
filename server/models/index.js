@@ -44,6 +44,7 @@ db.Sequelize = Sequelize;
 //Models
 db.Cities = require('../models/cities.js')(sequelize, Sequelize);  
 db.Hotels = require('../models/hotels.js')(sequelize, Sequelize);  
+db.Halalhotels = require('../models/halalhotels.js')(sequelize, Sequelize);  
 db.Facilities = require('../models/facilities.js')(sequelize, Sequelize);  
 db.Descriptions = require('../models/descriptions.js')(sequelize, Sequelize);  
 db.Images = require('../models/images.js')(sequelize, Sequelize);  
@@ -94,6 +95,52 @@ db.Hotels.hasMany(db.Descriptions, {
 db.Hotels.hasMany(db.Transactions, {
   foreignKey: 'HotelId'
 });
+
+
+/////////////////////
+
+// Relations HALALHOTELS
+db.Cities.hasMany(db.Halalhotels, {
+  foreignKey: 'CityId'
+});
+// db.Hotels.belongsTo(db.Cities, {
+//   // as: 'FK_Hotels_Cities',
+//   as: 'cities',
+//   foreignKey: 'CityId',
+//   constraints: false
+// });
+
+db.Halalhotels.hasMany(db.Facilities, {
+  foreignKey: 'HotelId'
+});
+// db.Facilities.belongsTo(db.Hotels, {
+//   // as: 'FK_Facilities_Hotels',
+//   foreignKey: 'HotelId',
+//   constraints: false
+// });
+
+db.Halalhotels.hasMany(db.Images, {
+  foreignKey: 'HotelId'
+});
+// db.Images.belongsTo(db.Hotels, {
+//   // as: 'FK_Images_Hotels',
+//   foreignKey: 'HotelId',
+//   constraints: false
+// });
+
+db.Halalhotels.hasMany(db.Descriptions, {
+  foreignKey: 'HotelId'
+});
+// db.Descriptions.belongsTo(db.Hotels, {
+//   // as: 'FK_Descriptions_Hotels',
+//   foreignKey: 'HotelId',
+//   constraints: false
+// });
+db.Halalhotels.hasMany(db.Transactions, {
+  foreignKey: 'HotelId'
+});
+
+///////////////////////
 
 db.Transactions.hasMany(db.Alerts, {
   foreignKey: 'TransactionId'
