@@ -24,7 +24,7 @@
     "q": "^1.4.1",
     "request": "^2.58.0",
     "rootpath": "^0.1.2",
-    "sequelize": "^4.5.0",
+    "sequelize": "^5.15.1",
     "stripe": "^5.4.0",
     "var_dump": "^1.0.5",
     "xml2js": "^0.4.17"
