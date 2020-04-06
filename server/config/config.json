@@ -3,7 +3,7 @@
     "username": "gotongr1_hj",
     "password": "halaljourney123",
     "database": "gotongr1_hj1",
-    "host": "104.250.105.84",
+    "host": "103.145.226.115",
     "dialect": "mysql",
 	  "secret": "SecretJWTToken"
   },
@@ -11,7 +11,7 @@
     "username": "gotongr1_hj",
     "password": "halaljourney123",
     "database": "gotongr1_hj1",
-    "host": "104.250.105.84",
+    "host": "103.145.226.115",
     "dialect": "mysql",
 	  "secret": "SecretJWTToken"
   },
@@ -19,21 +19,21 @@
     "username": "gotongr1_hj",
     "password": "halaljourney123",
     "database": "gotongr1_hj1",
-    "host": "104.250.105.84",
+    "host": "103.145.226.115",
     "dialect": "mysql"
   },
   "test": {
     "username": "gotongr1_hj",
     "password": "halaljourney123",
     "database": "gotongr1_hj1",
-    "host": "104.250.105.84",
+    "host": "103.145.226.115",
     "dialect": "mysql"
   },
   "production": {
     "username": "gotongr1_hj",
     "password": "halaljourney123",
     "database": "gotongr1_hj1",
-    "host": "104.250.105.84",
+    "host": "103.145.226.115",
     "dialect": "mysql"
   }
 }
