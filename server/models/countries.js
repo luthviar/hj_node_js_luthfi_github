@@ -8,8 +8,8 @@ module.exports = function(sequelize, Sequelize) {
             type: Sequelize.STRING(100)
         },
         // Timestamps
-        createdAt: Sequelize.DATE,
-        updatedAt: Sequelize.DATE,
+        // createdAt: Sequelize.DATE,
+        // updatedAt: Sequelize.DATE,
     });
 
     return Countries;

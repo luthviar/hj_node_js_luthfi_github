@@ -10,8 +10,8 @@ module.exports = function(sequelize, Sequelize) {
             type: Sequelize.TEXT('long')
         },
         // Timestamps
-        createdAt: Sequelize.DATE,
-        updatedAt: Sequelize.DATE,
+        // createdAt: Sequelize.DATE,
+        // updatedAt: Sequelize.DATE,
     });
 
     return Descriptions;

@@ -33,8 +33,8 @@ module.exports = function(sequelize, Sequelize) {
             type: Sequelize.DOUBLE
         },
         // Timestamps
-        createdAt: Sequelize.DATE,
-        updatedAt: Sequelize.DATE,
+        // createdAt: Sequelize.DATE,
+        // updatedAt: Sequelize.DATE,
     });
 
     return Halalhotel;

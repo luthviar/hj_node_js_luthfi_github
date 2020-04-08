@@ -15,8 +15,8 @@ module.exports = function(sequelize, Sequelize) {
             type: Sequelize.STRING(2)
         },
         // Timestamps
-        createdAt: Sequelize.DATE,
-        updatedAt: Sequelize.DATE,
+        // createdAt: Sequelize.DATE,
+        // updatedAt: Sequelize.DATE,
     });
 
     return Cities;

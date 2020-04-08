@@ -13,8 +13,8 @@ module.exports = function(sequelize, Sequelize) {
             type: Sequelize.STRING(200),
         },
         // Timestamps
-        createdAt: Sequelize.DATE,
-        updatedAt: Sequelize.DATE,
+        // createdAt: Sequelize.DATE,
+        // updatedAt: Sequelize.DATE,
     });
 
     return Facilities;
